@@ -99,3 +99,61 @@ footer{
     padding:20px;
     margin-top:40px;
 }
+.premium-hero{
+height:100vh;
+background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+url("images/banner.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:#fff;
+}
+
+.overlay{
+padding:20px;
+}
+
+.profile{
+width:220px;
+height:220px;
+border-radius:50%;
+border:6px solid yellow;
+object-fit:cover;
+margin-bottom:20px;
+}
+
+.hero-btn{
+display:inline-block;
+padding:15px 35px;
+background:#FFD700;
+color:#000;
+font-weight:bold;
+border-radius:40px;
+text-decoration:none;
+margin-top:20px;
+}
+
+.hero-btn:hover{
+background:white;
+}
+
+.about{
+padding:70px 20px;
+text-align:center;
+background:#fff;
+}
+
+.about p{
+max-width:800px;
+margin:auto;
+font-size:20px;
+}
+
+.contact{
+text-align:center;
+padding:60px 20px;
+background:#FFD700;
+}
