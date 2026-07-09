@@ -173,3 +173,206 @@ nav ul li a:hover{
 .gallery img:hover{
     transform:scale(1.05);
 }
+/* =========================================
+   PREMIUM POLITICAL WEBSITE CSS - PART 2
+========================================= */
+
+/* Leaders Section */
+
+.leaders{
+    padding:80px 10%;
+    background:#ffffff;
+}
+
+.leaders h2{
+    text-align:center;
+    font-size:38px;
+    color:#d89b00;
+    margin-bottom:50px;
+}
+
+.leader-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.leader-card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    transition:.4s;
+}
+
+.leader-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.leader-card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+}
+
+.leader-card h3{
+    padding:20px;
+    font-size:24px;
+    color:#222;
+}
+
+/* Contact */
+
+#contact{
+    padding:80px 10%;
+    background:#FFD700;
+    text-align:center;
+}
+
+#contact h2{
+    font-size:40px;
+    margin-bottom:25px;
+}
+
+#contact p{
+    font-size:20px;
+    margin:12px 0;
+}
+
+#contact .btn{
+    margin-top:25px;
+}
+
+/* Footer */
+
+footer{
+    background:#111;
+    color:#fff;
+    text-align:center;
+    padding:30px 20px;
+    font-size:18px;
+}
+
+/* Animations */
+
+.fade-up{
+    animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+
+0%{
+opacity:0;
+transform:translateY(40px);
+}
+
+100%{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* Cards Hover */
+
+.gallery img,
+.leader-card,
+.btn{
+transition:all .4s ease;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+.btn:hover{
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+/* Mobile Responsive */
+
+@media(max-width:992px){
+
+.header{
+flex-direction:column;
+padding:15px;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+.hero h2{
+font-size:36px;
+}
+
+.profile{
+width:180px;
+height:180px;
+}
+
+#about,
+#gallery,
+#contact,
+.leaders{
+padding:60px 6%;
+}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+padding-top:140px;
+}
+
+.hero h2{
+font-size:30px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.logo h1{
+font-size:24px;
+}
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.leader-grid{
+grid-template-columns:1fr;
+}
+
+.btn{
+width:100%;
+max-width:300px;
+}
+
+}
+
+@media(max-width:480px){
+
+.hero h2{
+font-size:26px;
+}
+
+.profile{
+width:150px;
+height:150px;
+}
+
+#about h2,
+#gallery h2,
+.leaders h2,
+#contact h2{
+font-size:30px;
+}
+
+}
