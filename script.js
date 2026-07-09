@@ -1,117 +1,51 @@
-// ===== Smooth Scroll =====
-document.querySelectorAll('nav a').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
+// ===== మండవ వెంకటేశ్వర్లు గౌడ్ వెబ్‌సైట్ =====
 
-    const target = document.querySelector(this.getAttribute('href'));
+// పేజీ లోడ్ అయినప్పుడు
+document.addEventListener("DOMContentLoaded", function () {
 
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  });
-});
+    console.log("Website Loaded Successfully");
 
-// ===== Fade In Sections =====
-const sections = document.querySelectorAll("section");
+    // గ్యాలరీ ఫోటోలపై క్లిక్ చేసినప్పుడు
+    const images = document.querySelectorAll(".gallery img");
 
-function revealSections() {
-  sections.forEach(section => {
-    const sectionTop = section.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
+    images.forEach(function (img) {
 
-    if (sectionTop < windowHeight - 100) {
-      section.classList.add("show");
-    }
-  });
-}
+        img.addEventListener("click", function () {
 
-window.addEventListener("scroll", revealSections);
-window.addEventListener("load", revealSections);
+            window.open(img.src, "_blank");
 
-// ===== Hero Buttons =====
-document.querySelectorAll(".btn").forEach(btn => {
+        });
 
-  btn.addEventListener("mouseenter", () => {
-    btn.style.transform = "translateY(-4px)";
-  });
-
-  btn.addEventListener("mouseleave", () => {
-    btn.style.transform = "translateY(0)";
-  });
+    });
 
 });
 
-// ===== Leader Cards =====
-document.querySelectorAll(".leader-card").forEach(card => {
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
-  card.addEventListener("mouseenter", () => {
-    card.style.transform = "translateY(-10px)";
-  });
+    anchor.addEventListener("click", function (e) {
 
-  card.addEventListener("mouseleave", () => {
-    card.style.transform = "translateY(0)";
-  });
+        e.preventDefault();
 
-});
+        const target = document.querySelector(this.getAttribute("href"));
 
-// ===== Gallery Zoom =====
-document.querySelectorAll(".gallery-item img").forEach(img => {
+        if (target) {
 
-  img.addEventListener("click", () => {
+            target.scrollIntoView({
 
-    if (img.style.transform === "scale(1.6)") {
-      img.style.transform = "scale(1)";
-      img.style.zIndex = "1";
-    } else {
-      img.style.transform = "scale(1.6)";
-      img.style.zIndex = "100";
-    }
+                behavior: "smooth"
 
-  });
+            });
+
+        }
+
+    });
 
 });
 
-// ===== Contact Form =====
-const form = document.querySelector("form");
+// Welcome Message
+setTimeout(function () {
 
-if (form) {
+    alert("మండవ వెంకటేశ్వర్లు గౌడ్ అధికారిక వెబ్‌సైట్‌కు స్వాగతం.");
 
-  form.addEventListener("submit", function(e){
-
-    e.preventDefault();
-
-    alert("ధన్యవాదాలు!\nమీ సందేశం విజయవంతంగా నమోదు అయింది.");
-
-    form.reset();
-
-  });
-
-}
-
-// ===== Header Shadow =====
-const header = document.querySelector(".header");
-
-window.addEventListener("scroll", () => {
-
-  if(window.scrollY > 40){
-
-    header.style.boxShadow = "0 5px 20px rgba(0,0,0,.25)";
-
-  }else{
-
-    header.style.boxShadow = "0 3px 15px rgba(0,0,0,.15)";
-
-  }
-
-});
-
-// ===== Page Loaded =====
-window.onload = () => {
-
-  document.body.style.opacity = "1";
-
-};
-
-console.log("Website Loaded Successfully");
+}, 1000);
