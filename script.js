@@ -1,6 +1,6 @@
-// Smooth scroll for menu links
+// ===== Smooth Scroll =====
 document.querySelectorAll('nav a').forEach(link => {
-  link.addEventListener('click', function (e) {
+  link.addEventListener('click', function(e) {
     e.preventDefault();
 
     const target = document.querySelector(this.getAttribute('href'));
@@ -13,15 +13,15 @@ document.querySelectorAll('nav a').forEach(link => {
   });
 });
 
-// Fade-in animation on scroll
+// ===== Fade In Sections =====
 const sections = document.querySelectorAll("section");
 
 function revealSections() {
   sections.forEach(section => {
-    const top = section.getBoundingClientRect().top;
+    const sectionTop = section.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
 
-    if (top < windowHeight - 100) {
+    if (sectionTop < windowHeight - 100) {
       section.classList.add("show");
     }
   });
@@ -30,46 +30,88 @@ function revealSections() {
 window.addEventListener("scroll", revealSections);
 window.addEventListener("load", revealSections);
 
-// Button hover animation
-const btn = document.querySelector(".btn");
+// ===== Hero Buttons =====
+document.querySelectorAll(".btn").forEach(btn => {
 
-if (btn) {
-  btn.addEventListener("mouseover", () => {
-    btn.style.transform = "scale(1.05)";
+  btn.addEventListener("mouseenter", () => {
+    btn.style.transform = "translateY(-4px)";
   });
 
-  btn.addEventListener("mouseout", () => {
-    btn.style.transform = "scale(1)";
+  btn.addEventListener("mouseleave", () => {
+    btn.style.transform = "translateY(0)";
   });
-}
 
-// Gallery image click effect
-document.querySelectorAll(".gallery img").forEach(img => {
-  img.addEventListener("click", () => {
-    img.classList.toggle("zoom");
-  });
 });
 
-// Contact form message
+// ===== Leader Cards =====
+document.querySelectorAll(".leader-card").forEach(card => {
+
+  card.addEventListener("mouseenter", () => {
+    card.style.transform = "translateY(-10px)";
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "translateY(0)";
+  });
+
+});
+
+// ===== Gallery Zoom =====
+document.querySelectorAll(".gallery-item img").forEach(img => {
+
+  img.addEventListener("click", () => {
+
+    if (img.style.transform === "scale(1.6)") {
+      img.style.transform = "scale(1)";
+      img.style.zIndex = "1";
+    } else {
+      img.style.transform = "scale(1.6)";
+      img.style.zIndex = "100";
+    }
+
+  });
+
+});
+
+// ===== Contact Form =====
 const form = document.querySelector("form");
 
 if (form) {
-  form.addEventListener("submit", function (e) {
+
+  form.addEventListener("submit", function(e){
+
     e.preventDefault();
 
-    alert("ధన్యవాదాలు! మీ వివరాలు విజయవంతంగా నమోదు అయ్యాయి.");
+    alert("ధన్యవాదాలు!\nమీ సందేశం విజయవంతంగా నమోదు అయింది.");
 
     form.reset();
+
   });
+
 }
 
-// Header shadow while scrolling
-window.addEventListener("scroll", () => {
-  const header = document.querySelector("header");
+// ===== Header Shadow =====
+const header = document.querySelector(".header");
 
-  if (window.scrollY > 50) {
-    header.style.boxShadow = "0 5px 15px rgba(0,0,0,0.25)";
-  } else {
-    header.style.boxShadow = "0 2px 10px rgba(0,0,0,0.15)";
+window.addEventListener("scroll", () => {
+
+  if(window.scrollY > 40){
+
+    header.style.boxShadow = "0 5px 20px rgba(0,0,0,.25)";
+
+  }else{
+
+    header.style.boxShadow = "0 3px 15px rgba(0,0,0,.15)";
+
   }
+
 });
+
+// ===== Page Loaded =====
+window.onload = () => {
+
+  document.body.style.opacity = "1";
+
+};
+
+console.log("Website Loaded Successfully");
